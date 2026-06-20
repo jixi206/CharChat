@@ -960,3 +960,241 @@ body::after {
     opacity: 1;
   }
 }
+
+/* ========== SCREEN CONTAINER (Settings) ========== */
+.screen-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.form-container {
+  padding: 32px 40px;
+  max-width: 650px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========== MOBILE RESPONSIVENESS ========== */
+
+/* Tablet — up to 768px */
+@media (max-width: 768px) {
+  .home-screen {
+    padding: 24px 20px;
+  }
+
+  .home-title {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+
+  .character-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .create-btn-full {
+    padding: 16px;
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+  }
+
+  .create-form {
+    padding: 28px 24px;
+    margin: 16px;
+    width: auto;
+  }
+
+  .form-container {
+    padding: 24px 20px;
+  }
+
+  .chat-messages {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .chat-input-container {
+    padding: 14px 20px;
+    gap: 12px;
+  }
+
+  .message {
+    max-width: 85%;
+    font-size: 0.98rem;
+    padding: 14px 18px;
+  }
+
+  .app-header {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Phone — up to 480px */
+@media (max-width: 480px) {
+  /* Remove side borders & shadow that look weird on full-width mobile */
+  .app-container {
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  /* Prevent orbs from causing horizontal scroll on mobile */
+  body::before,
+  body::after {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .home-screen {
+    padding: 20px 16px;
+    /* Add bottom padding so content clears the iOS home bar */
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+
+  .home-title {
+    font-size: 1.55rem;
+    margin-bottom: 20px;
+  }
+
+  .home-header {
+    margin-bottom: 20px;
+  }
+
+  /* Stack name + icons vertically on very small screens */
+  .character-card {
+    padding: 16px;
+    gap: 14px;
+    border-radius: 22px;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 1.4rem;
+  }
+
+  .character-name {
+    font-size: 1.1rem;
+  }
+
+  .character-tagline {
+    font-size: 0.88rem;
+  }
+
+  /* Shrink action buttons so they don't overflow card */
+  .card-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .icon-btn {
+    padding: 8px;
+  }
+
+  /* Chat screen */
+  .chat-screen {
+    height: 100dvh; /* dynamic viewport height — respects mobile browser chrome */
+  }
+
+  .chat-messages {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+
+  .message {
+    max-width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    border-radius: 20px;
+  }
+
+  .chat-input-container {
+    padding: 12px 14px;
+    gap: 10px;
+    /* Stay above iOS home indicator */
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+
+  .chat-input {
+    padding: 13px 18px;
+    font-size: 0.98rem;
+  }
+
+  .send-btn {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+  }
+
+  .app-header {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .header-title {
+    font-size: 1.1rem;
+  }
+
+  .avatar-small {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  /* Create screen */
+  .create-form {
+    padding: 22px 18px;
+    margin: 12px;
+    gap: 20px;
+    border-radius: 24px;
+  }
+
+  .form-input {
+    padding: 13px 16px;
+    font-size: 0.98rem;
+  }
+
+  .save-btn {
+    padding: 15px;
+    font-size: 1.05rem;
+  }
+
+  .image-preview {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* Settings */
+  .form-container {
+    padding: 18px 16px;
+  }
+
+  .form-info-box {
+    padding: 18px 16px;
+  }
+
+  /* Empty state */
+  .empty-state {
+    padding: 40px 16px;
+  }
+
+  .empty-state p {
+    font-size: 1rem;
+  }
+
+  /* Create button */
+  .create-btn-full {
+    padding: 15px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius: 22px;
+  }
+}
