@@ -9,7 +9,7 @@ function App() {
   const DEFAULT_CHARACTERS = [
     {
       id: 'default-study',
-      name: 'Aiden',
+      name: 'Study Buddy',
       tagline: 'strict, focused, mentor, motivating',
       description: 'Your no-nonsense study partner who keeps you locked in and holds you accountable. Zero tolerance for procrastination, maximum results.',
       avatarColor: '#3b82f6',
@@ -18,7 +18,7 @@ function App() {
     },
     {
       id: 'default-funny',
-      name: 'Milo',
+      name: 'Funny Friend',
       tagline: 'funny, chaotic, goofy, comedian, humor',
       description: 'The unhinged class clown who turns everything into a bit. Absolutely cannot be serious for more than 3 seconds.',
       avatarColor: '#f59e0b',
@@ -27,7 +27,7 @@ function App() {
     },
     {
       id: 'default-comfort',
-      name: 'Skye',
+      name: 'Comfort Friend',
       tagline: 'caring, sweet, kind, soft, gentle',
       description: 'Your warm, always-there-for-you friend who never judges. Whether you need to vent or just feel heard, Skye is your safe space.',
       avatarColor: '#ec4899',
