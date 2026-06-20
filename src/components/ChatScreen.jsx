@@ -14,7 +14,16 @@ function ChatScreen({ character, onBack }) {
         // ignore
       }
     }
-    return [{ id: 1, text: character.greeting, sender: 'ai' }];
+    const hasKey = localStorage.getItem('charchat_api_key') || import.meta.env.VITE_GEMINI_API_KEY;
+    const initial = [{ id: 1, text: character.greeting, sender: 'ai' }];
+    if (!hasKey) {
+      initial.push({
+        id: 2,
+        text: '⚙️ To start chatting, please add your Gemini API key first! Tap the back button → Settings (gear icon) → paste your key.',
+        sender: 'system'
+      });
+    }
+    return initial;
   });
   
   const [inputValue, setInputValue] = useState('');
@@ -85,12 +94,21 @@ function ChatScreen({ character, onBack }) {
 
       <div className="chat-messages">
         {messages.map((msg) => (
-          <div 
-            key={msg.id} 
-            className={`message ${msg.sender === 'ai' ? 'message-ai' : 'message-user'}`}
-          >
-            {msg.text}
-          </div>
+          msg.sender === 'system' ? (
+            <div
+              key={msg.id}
+              className="message-system"
+            >
+              {msg.text}
+            </div>
+          ) : (
+            <div
+              key={msg.id}
+              className={`message ${msg.sender === 'ai' ? 'message-ai' : 'message-user'}`}
+            >
+              {msg.text}
+            </div>
+          )
         ))}
         
         {isTyping && (
