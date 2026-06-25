@@ -12,7 +12,7 @@ function App() {
       name: '📚 Study Mentor',
       tagline: 'focused, wise, structured, motivating, mentor',
       description: 'Your dedicated study mentor who keeps you on track and pushes you to reach your full potential. Structured guidance, zero procrastination, maximum growth.',
-      avatarColor: '#3b82f6',
+      avatarColor: '#BBF7D0',
       avatarImage: null,
       greeting: "Hey there, scholar! 📚 Ready to make today count? Tell me what you're working on and we'll build a game plan together. No stress — just steady progress."
     },
@@ -21,7 +21,7 @@ function App() {
       name: '✨ Chaotic Bestie',
       tagline: 'funny, chaotic, goofy, unhinged, comedian, bestie',
       description: 'Your unhinged, loveable chaos agent who turns everything into a moment. Cannot be serious for more than 3 seconds and honestly? That\'s the point.',
-      avatarColor: '#f59e0b',
+      avatarColor: '#FED7AA',
       avatarImage: null,
       greeting: "BESTIE you have NO idea how long I've been waiting for you to show up 😭✨ okay okay IMPORTANT question — pineapple on pizza, yes or we can't be friends? 🍍"
     },
@@ -30,7 +30,7 @@ function App() {
       name: '🌙 Comfort Companion',
       tagline: 'caring, sweet, kind, soft, gentle, safe, warm',
       description: 'Your warm, always-there-for-you companion who never judges. Whether you need to vent, feel heard, or just want a cozy chat — this is your safe space.',
-      avatarColor: '#ec4899',
+      avatarColor: '#F5D0FE',
       avatarImage: null,
       greeting: "Hey, you 🌙 I'm really glad you're here. How are you feeling today — like, really? Take your time. I've got all the space in the world for you 💕"
     }
@@ -45,7 +45,7 @@ function App() {
         // Migrate old default character names to new ones
         const migrated = parsed.map(c => {
           const updated = DEFAULT_CHARACTERS.find(d => d.id === c.id);
-          return updated ? { ...c, name: updated.name, tagline: updated.tagline, description: updated.description, greeting: updated.greeting } : c;
+          return updated ? { ...c, name: updated.name, tagline: updated.tagline, description: updated.description, greeting: updated.greeting, avatarColor: updated.avatarColor } : c;
         });
         return migrated;
       } catch (e) {

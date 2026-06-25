@@ -4,8 +4,17 @@ import { Plus, Edit2, Trash2, RefreshCw, Settings } from 'lucide-react';
 function HomeScreen({ characters, onSelectCharacter, onCreateClick, onEditCharacter, onDeleteCharacter, onRefreshChat, onOpenSettings, theme, onToggleTheme }) {
   return (
     <div className="home-screen">
+      {/* Brand header */}
+      <div className="brand-hero">
+        <div className="brand-title-wrap">
+          <h1 className="brand-title">CharChat</h1>
+          <div className="brand-glow" />
+        </div>
+        <p className="brand-tagline">Where Every Character Feels Real.</p>
+      </div>
+
       <div className="home-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h1 className="home-title">My AI Friends</h1>
+        <h2 className="home-title">Character Lounge</h2>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <div className="theme-toggle">
             <button 
@@ -51,7 +60,11 @@ function HomeScreen({ characters, onSelectCharacter, onCreateClick, onEditCharac
                   backgroundPosition: 'center'
                 }}
               >
-                {!character.avatarImage && character.name.charAt(0)}
+                {!character.avatarImage && (
+                  <span style={{ fontSize: '1.4rem', lineHeight: 1 }}>
+                    {Array.from(character.name)[0]}
+                  </span>
+                )}
               </div>
               <div className="character-info">
                 <h2 className="character-name">{character.name}</h2>
