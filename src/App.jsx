@@ -41,7 +41,13 @@ function App() {
     const saved = localStorage.getItem('charchat_characters');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        // Migrate old default character names to new ones
+        const migrated = parsed.map(c => {
+          const updated = DEFAULT_CHARACTERS.find(d => d.id === c.id);
+          return updated ? { ...c, name: updated.name, tagline: updated.tagline, description: updated.description, greeting: updated.greeting } : c;
+        });
+        return migrated;
       } catch (e) {
         console.error("Failed to parse characters", e);
       }
